@@ -25,6 +25,7 @@ program
       options.name = undefined;
     }
 
+    // the options object has a lot of other keys that we don't used when filtering our data
     const searchParams = Object.assign(
       options.external_id ? { external_id: options.external_id } : {},
       options.name ? { name: options.name } : {},
@@ -35,6 +36,7 @@ program
     );
 
     const results = filter(organizations, searchParams).map(org =>
+      // omit private keys
       omit(org, "_id")
     );
 
