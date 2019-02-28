@@ -2,7 +2,6 @@ const organizations = require("../data/organizations.json");
 const tickets = require("../data/tickets.json");
 const users = require("../data/users.json");
 
-const mainMenu = require("./mainMenu");
 const { SEPARATOR } = require("./constants");
 
 module.exports = () => {
@@ -20,6 +19,4 @@ module.exports = () => {
       console.log(key);
     });
   });
-
-  mainMenu();
 };
