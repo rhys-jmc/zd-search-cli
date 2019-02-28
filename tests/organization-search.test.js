@@ -16,6 +16,26 @@ describe("organization search", () => {
       const lines = response.trim().split(EOL);
 
       expect(lines).toContain("name:              Enthaze");
+      expect(lines).toContain("ticket_3:          A Problem in Guyana");
+
+      done();
+    });
+  });
+
+  test("search by domain_names", done => {
+    execute("./src/index.js", [
+      ENTER,
+      DOWN,
+      DOWN,
+      ENTER,
+      "domain_names",
+      ENTER,
+      "kage.com",
+      ENTER
+    ]).then(response => {
+      const lines = response.trim().split(EOL);
+
+      expect(lines).toContain("name:              Enthaze");
 
       done();
     });

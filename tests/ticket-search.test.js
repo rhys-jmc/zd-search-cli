@@ -14,11 +14,12 @@ describe("ticket search", () => {
     ]).then(response => {
       const lines = response.trim().split(EOL);
 
-      console.log(lines);
-
       expect(lines).toContain(
         "subject:            A Catastrophe in Korea (North)"
       );
+      expect(lines).toContain("organization:       Zentry");
+      expect(lines).toContain("submitter:          Elma Castro");
+      expect(lines).toContain("assignee:           Harris Côpeland");
 
       done();
     });

@@ -18,6 +18,7 @@ function executeWithInput(processPath, inputs = [], opts = {}) {
     inputs = [];
   }
 
+  // timeout of 200 seems to be neccessary to prevent issues
   const { env = null, timeout = 200 } = opts;
   const childProcess = createProcess(processPath, [], env);
   childProcess.stdin.setEncoding("utf-8");
