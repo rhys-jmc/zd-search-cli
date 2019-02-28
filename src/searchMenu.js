@@ -8,7 +8,7 @@ const {
   TICKETS_VALUE
 } = require("./constants");
 
-module.exports = () => {
+module.exports = () =>
   inquirer
     .prompt({
       type: "list",
@@ -21,4 +21,3 @@ module.exports = () => {
       ]
     })
     .then(answers => searchTermInput(answers[SEARCH_MENU_NAME]));
-};

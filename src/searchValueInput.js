@@ -7,7 +7,7 @@ const {
   SEPARATOR
 } = require("./constants");
 
-module.exports = (database, term) => {
+module.exports = (database, term) =>
   inquirer
     .prompt({
       type: "input",
@@ -41,4 +41,3 @@ module.exports = (database, term) => {
         console.log(results.map(formatResult).join(`\n${SEPARATOR}\n`));
       }
     });
-};

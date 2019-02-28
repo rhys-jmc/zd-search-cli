@@ -12,7 +12,7 @@ const {
 const mainMenu = () => {
   console.log("\n");
 
-  inquirer
+  return inquirer
     .prompt({
       type: "list",
       name: MAIN_MENU_NAME,

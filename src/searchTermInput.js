@@ -3,7 +3,7 @@ const inquirer = require("inquirer");
 const searchValueInput = require("./searchValueInput");
 const { SEARCH_TERM_INPUT_NAME } = require("./constants");
 
-module.exports = database => {
+module.exports = database =>
   inquirer
     .prompt({
       type: "input",
@@ -13,4 +13,3 @@ module.exports = database => {
     .then(answers =>
       searchValueInput(database, answers[SEARCH_TERM_INPUT_NAME])
     );
-};

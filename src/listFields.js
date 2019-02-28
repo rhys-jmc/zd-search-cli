@@ -19,4 +19,6 @@ module.exports = () => {
       console.log(key);
     });
   });
+
+  return items;
 };
