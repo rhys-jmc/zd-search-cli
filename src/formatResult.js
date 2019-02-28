@@ -3,6 +3,7 @@ const tickets = require("../data/tickets.json");
 const users = require("../data/users.json");
 
 module.exports = result => {
+  // fetch organisation data from id if available
   if (result.organization_id) {
     const organization = organizations.find(
       org => org._id === result.organization_id
@@ -13,6 +14,7 @@ module.exports = result => {
     }
   }
 
+  // fetch submitter data from id if available
   if (result.submitter_id) {
     const user = users.find(u => u._id === result.submitter_id);
 
@@ -21,6 +23,7 @@ module.exports = result => {
     }
   }
 
+  // fetch assignee data from id if available
   if (result.assignee_id) {
     const user = users.find(u => u._id === result.assignee_id);
 
@@ -29,6 +32,7 @@ module.exports = result => {
     }
   }
 
+  // if user result, add associated tickets as submitter
   if (result.url.includes("users")) {
     const userTickets = tickets.filter(
       ticket => ticket.submitter_id === result._id
@@ -39,6 +43,7 @@ module.exports = result => {
     });
   }
 
+  // if organization result, add associated tickets
   if (result.url.includes("organizations")) {
     const orgTickets = tickets.filter(
       ticket => ticket.organization_id === result._id
