@@ -16,8 +16,6 @@
   },
   "dependencies": {
     "commander": "^2.19.0",
-    "inquirer": "^6.2.2",
-    "lodash.filter": "^4.6.0",
-    "lodash.omit": "^4.5.0"
+    "inquirer": "^6.2.2"
   }
 }

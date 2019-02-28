@@ -1,41 +1,37 @@
 const { spawn } = require("child_process");
 
-let counter = 0;
-
 test("welcome", done => {
   const zdSearch = spawn("node", ["./src/index.js"]);
+
+  let counter = 0;
 
   zdSearch.stdout.on("data", data => {
     const output = data.toString();
     const lines = output.split("\n");
 
+    // console.log({ lines, counter });
+
     switch (counter) {
       case 0:
-        expect(lines).toEqual(["Welcome to Zendesk Search", "", ""]);
-
-        counter++;
-
-        return;
-
+        expect(lines).toEqual(["Welcome to Zendesk Search", ""]);
+        break;
       case 1:
         expect(lines).toEqual([
-          `? Select search options: (Use arrow keys)`,
+          "",
+          "",
+          "? Select search options: (Use arrow keys)",
           "❯ Search Zendesk ",
           "  View a list of searchable fields ",
-          "  Quit "
+          "  Quit \u001b[7D\u001b[7C"
         ]);
+        break;
+    }
 
-        counter++;
+    counter++;
 
-        return;
-
-      case 2:
-        expect(lines).toEqual(["\u001b[7D\u001b[7C"]);
-
-        zdSearch.kill();
-        done();
-
-        return;
+    if (counter >= 2) {
+      zdSearch.kill();
+      done();
     }
   });
 });
