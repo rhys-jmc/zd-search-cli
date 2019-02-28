@@ -18,7 +18,7 @@ function executeWithInput(processPath, inputs = [], opts = {}) {
     inputs = [];
   }
 
-  const { env = null, timeout = 100 } = opts;
+  const { env = null, timeout = 200 } = opts;
   const childProcess = createProcess(processPath, [], env);
   childProcess.stdin.setEncoding("utf-8");
 
