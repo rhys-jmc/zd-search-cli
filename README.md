@@ -15,6 +15,12 @@ node ./src/index.js
 npm test
 ```
 
+## Performance Test
+
+**19066 users queried in 7 seconds**
+
+[Recording](https://www.useloom.com/share/b736e2253b224f25a59aba29cb3d447c)
+
 ## Task
 
 ![Task 1/6](https://i.imgur.com/0CA4Sf5.png)
