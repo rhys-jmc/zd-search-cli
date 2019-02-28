@@ -24,4 +24,22 @@ describe("ticket search", () => {
       done();
     });
   });
+
+  test("search by _id", done => {
+    execute("./src/index.js", [
+      ENTER,
+      DOWN,
+      ENTER,
+      "_id",
+      ENTER,
+      "not a real id",
+      ENTER
+    ]).then(response => {
+      const lines = response.trim().split(EOL);
+
+      expect(lines).toContain("No results found");
+
+      done();
+    });
+  });
 });
