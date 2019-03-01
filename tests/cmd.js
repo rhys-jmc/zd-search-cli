@@ -3,7 +3,7 @@ const concat = require("concat-stream");
 
 // source: https://medium.com/@zorrodg/integration-tests-on-node-js-cli-part-2-testing-interaction-user-input-6f345d4b713a
 
-function createProcess(processPath, args = [], env = null) {
+function createProcess(processPath, args = []) {
   args = [processPath].concat(args);
 
   return spawn("node", args);
@@ -19,8 +19,8 @@ function executeWithInput(processPath, inputs = [], opts = {}) {
   }
 
   // timeout of 275 seems to be neccessary to prevent issues
-  const { env = null, timeout = 275 } = opts;
-  const childProcess = createProcess(processPath, [], env);
+  const { timeout = 275 } = opts;
+  const childProcess = createProcess(processPath, []);
   childProcess.stdin.setEncoding("utf-8");
 
   let currentInputTimeout;

@@ -4,7 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest --coverage",
+    "format": "prettier --write \"{src,tests}/**/*.js\"",
+    "lint": "eslint ./src ./tests",
+    "test": "npm run format && npm run lint && jest --coverage",
     "test:watch": "jest --watch"
   },
   "husky": {
