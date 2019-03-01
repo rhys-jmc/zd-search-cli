@@ -55,6 +55,7 @@ Inquirer.js provides all the heavy lifting in printing questions and parsing ans
 - Configurable output fields
 - Improved system tests implementation
 - Implement in TypeScript
+- Implement a GUI
 
 ## Task
 
