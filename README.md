@@ -38,9 +38,9 @@ The system tests (`(.*-search|welcome).test.js`) may fail as they rely on a time
 
 ## Dependencies
 
-### Inquirer
+### Inquirer.js
 
-Inquirer provides all the heavy lifting in printing questions and parsing answers. The critical reasons for use were the smooth implementation of hierarchical prompts and improved UX. Typing in answers for selection is not a pleasant experience; navigation through directions keys is far more natural.
+Inquirer.js provides all the heavy lifting in printing questions and parsing answers. The critical reasons for use were the smooth implementation of hierarchical prompts, error handling out of the box, and improved UX. Typing in answers for selection is not a pleasant experience; navigation through directions keys is far more natural.
 
 ## Potential improvements
 
