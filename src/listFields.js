@@ -11,14 +11,15 @@ module.exports = () => {
     { name: "Organizations", example: organizations[0] }
   ];
 
-  items.forEach(item => {
-    console.log(SEPARATOR);
-    console.log(`Search ${item.name} with`);
+  const output = items.map(item => {
+    const log = `${SEPARATOR}
+Search ${item.name} with
+${Object.keys(item.example).join("\n")}`;
 
-    Object.keys(item.example).forEach(key => {
-      console.log(key);
-    });
+    console.log(log);
+
+    return log;
   });
 
-  return items;
+  return output;
 };
