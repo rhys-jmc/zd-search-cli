@@ -3,7 +3,7 @@
 ## Getting Started
 
 ```
-git@github.com:vorks/zd-search-cli.git
+git clone git@github.com:vorks/zd-search-cli.git
 cd zd-search-cli
 npm install
 node ./src/index.js
@@ -15,13 +15,18 @@ It is also hosted on npm:
 npm i -g zd-search-cli
 ```
 
-However, I was unable to get my machine to recognize the command "zd-search-cli". I think this is because in attempts to install a local copy globally, I have messed up npm that I would have to spend some time rectifying. So others may enjoy better luck. Give it a go and let me know how it goes!
+However, I was unable to get my machine to recognize the command "zd-search-cli". I think this is because in my attempts to install a local copy globally, I have messed up npm that I would have to spend some time rectifying. So others may enjoy better luck. Give it a go and let me know how it goes!
 
 ## Run Test Suite
 
 ```
+npm install
 npm test
 ```
+
+## Test Coverage
+
+![Test Coverage](https://i.imgur.com/IsKMB42.png)
 
 ## Performance Test
 
@@ -29,11 +34,17 @@ npm test
 
 [Recording](https://www.useloom.com/share/b736e2253b224f25a59aba29cb3d447c)
 
+## Dependencies
+
+### Inquirer
+
+Inquirer provides all the heavy lifting in printing questions and parsing answers. The critical reasons for use were the smooth implementation of hierarchical prompts and improved UX. Typing in answers for selection is not a pleasant experience; navigation through directions keys is far more natural.
+
 ## Potential improvements
 
 - Intelligent search
 - Take data source as environment variables
-- Cross-functionality between json, csv, SQl, and NoSQL
+- Cross-functionality between json, csv, SQL, and NoSQL
 - Improved output formatting
 - Multiple search parameters at once
 - Allow searching within ranges
