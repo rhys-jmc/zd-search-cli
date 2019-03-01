@@ -24,6 +24,8 @@ npm install
 npm test
 ```
 
+The system tests (`(.*-search|welcome).test.js`) may fail as they rely on a timeout to ensure user input is received correctly. I have set a timeout that works for my machine, but it may not work for yours. If these tests fail for you, increase the `timeout` found in `cmd.js`.
+
 ## Test Coverage
 
 ![Test Coverage](https://i.imgur.com/IsKMB42.png)
@@ -51,6 +53,8 @@ Inquirer provides all the heavy lifting in printing questions and parsing answer
 - Allow multiple date formats to still match with differently formatted date values
 - Configurable output style to allow integrations and useful copy+paste
 - Configurable output fields
+- Improved system tests implementation
+- Implement in TypeScript
 
 ## Task
 
